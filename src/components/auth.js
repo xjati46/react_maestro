@@ -18,7 +18,7 @@ function Auth() {
   }
 
   useEffect(() => {
-    if(token['msms-cookie']) window.location.href = '/admin';
+    if(token['msms-cookie'] && token['msms-cookie'] === "4f5b489070788c36cad20d288628deca5a710371") window.location.href = '/admin';
   }, [token])
 
   return (
