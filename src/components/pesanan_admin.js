@@ -74,6 +74,17 @@ function PesananAdmin(props) {
     setModalUbah(true);
   };
 
+  const klikKunci = () => {
+    if(p1) setP1c(true)
+    if(p2) setP2c(true)
+    if(p3) setP3c(true)
+    if(p4) setP4c(true)
+    if(p5) setP5c(true)
+    if(p6) setP6c(true)
+    if(p7) setP7c(true)
+    if(p8) setP8c(true)
+  };
+
 // API CALLS
   const klikTambah = () => {
     API.tambahPesanan({
@@ -710,22 +721,33 @@ function PesananAdmin(props) {
 
                 <hr/>
 
-                <Form.Group>
-                  <Form.Label>Status Latihan</Form.Label>
-                  <Form.Check 
-                    type="switch"
-                    id="custom-switch"
-                    onChange={() => {
-                      if(arsip){
-                        setArsip(false)
-                      } else {
-                        setArsip(true)
-                      }
-                      }}
-                    label={arsip ? <strong className="text-danger">PASIF</strong> : <strong className="text-success">AKTIF</strong>}
-                    checked={arsip ? false : true}
-                  />
-                </Form.Group>
+                <Form.Row>
+                  <Col xs={6}>
+                    <Form.Group>
+                      <Form.Label>Status Latihan</Form.Label>
+                      <Form.Check 
+                        type="switch"
+                        id="custom-switch"
+                        onChange={() => {
+                          if(arsip){
+                            setArsip(false)
+                          } else {
+                            setArsip(true)
+                          }
+                          }}
+                        label={arsip ? <strong className="text-danger">PASIF</strong> : <strong className="text-success">AKTIF</strong>}
+                        checked={arsip ? false : true}
+                      />
+                    </Form.Group>
+                  </Col>
+
+                  <Col xs={6}>
+                    <Form.Group>
+                      <Form.Label>Kunci Semua Tanggal</Form.Label>
+                       <Button variant="danger" onClick={() => klikKunci()}>Kunci</Button>
+                    </Form.Group>
+                  </Col>
+                </Form.Row>
 
               </Col>
               { pilihPesananDiubah.produk_pert === 1 ?

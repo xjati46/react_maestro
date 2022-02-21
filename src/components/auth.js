@@ -17,6 +17,13 @@ function Auth() {
     .catch( error => console.log(error))
   }
 
+  //DEVELOPMENT CODE
+
+  // useEffect(() => {
+  //   if(token['msms-cookie'] && token['msms-cookie'] === "fb5ec5875f75a4cb52f2a523a2f3be5c4451421d") window.location.href = '/admin';
+  // }, [token])
+
+  //PRODUCTION CODE
   useEffect(() => {
     if(token['msms-cookie'] && token['msms-cookie'] === "4f5b489070788c36cad20d288628deca5a710371") window.location.href = '/admin';
   }, [token])
